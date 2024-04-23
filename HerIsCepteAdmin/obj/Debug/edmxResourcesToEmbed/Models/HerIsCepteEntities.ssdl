@@ -1,0 +1,435 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="HerIsCepteModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Admins">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Department" Type="int" />
+    <Property Name="Name" Type="nvarchar" MaxLength="200" />
+    <Property Name="Mail" Type="nvarchar" MaxLength="200" />
+    <Property Name="Phone" Type="nvarchar" MaxLength="50" />
+    <Property Name="Gender" Type="int" />
+    <Property Name="Username" Type="nvarchar" MaxLength="50" />
+    <Property Name="Password" Type="nvarchar" MaxLength="200" />
+    <Property Name="Deleted" Type="bit" />
+    <Property Name="LoginPermission" Type="bit" />
+  </EntityType>
+  <EntityType Name="AdvertisementDocuments">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="AdvertisementID" Type="int" />
+    <Property Name="Status" Type="int" />
+    <Property Name="DocumentPath" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="AdvertisementQuestion">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="AdvertisementID" Type="int" />
+    <Property Name="QuestionID" Type="int" />
+    <Property Name="AnswerID" Type="int" />
+  </EntityType>
+  <EntityType Name="Advertisements">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserID" Type="int" />
+    <Property Name="TopCategoriesID" Type="int" />
+    <Property Name="SubCategoriesID" Type="int" />
+    <Property Name="AdminVerified" Type="bit" />
+    <Property Name="Status" Type="int" />
+    <Property Name="CreateDate" Type="datetime" />
+    <Property Name="VerifyDate" Type="datetime" />
+    <Property Name="ExpiryDate" Type="datetime" />
+    <Property Name="City" Type="int" />
+    <Property Name="District" Type="int" />
+    <Property Name="Address" Type="nvarchar(max)" />
+    <Property Name="Description" Type="nvarchar(max)" />
+    <Property Name="Preprice" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="RejectReason" Type="int" />
+  </EntityType>
+  <EntityType Name="Blog">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Title" Type="nvarchar" MaxLength="250" />
+    <Property Name="SubTitle" Type="nvarchar" MaxLength="350" />
+    <Property Name="Description" Type="nvarchar(max)" />
+    <Property Name="SeoWords" Type="nvarchar(max)" />
+    <Property Name="SeoDescription" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="BlogPhoto">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="BlogID" Type="int" />
+    <Property Name="Photo" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="Comments">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserID" Type="int" />
+    <Property Name="CommentedBy" Type="int" />
+    <Property Name="AdvertisementID" Type="int" />
+    <Property Name="OfferID" Type="int" />
+    <Property Name="Comment" Type="nvarchar(max)" />
+    <Property Name="Point" Type="int" />
+    <Property Name="Status" Type="int" />
+    <Property Name="CreateDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="CorporateApplications">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserID" Type="int" />
+    <Property Name="Tarih" Type="datetime" />
+    <Property Name="Completed" Type="bit" />
+  </EntityType>
+  <EntityType Name="CorporateDocuments">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ApplicationID" Type="int" />
+    <Property Name="DocumentPath" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="Definitions">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Value" Type="int" />
+    <Property Name="Description" Type="nvarchar" MaxLength="200" />
+    <Property Name="Parameter" Type="nvarchar" MaxLength="50" />
+    <Property Name="Deleted" Type="bit" />
+  </EntityType>
+  <EntityType Name="DistrictsAndCities">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SehirIlceMahalleAdi" Type="nvarchar(max)" />
+    <Property Name="UstID" Type="int" />
+    <Property Name="minlongitude" Type="nvarchar(max)" />
+    <Property Name="minlatitude" Type="nvarchar(max)" />
+    <Property Name="maxlongitude" Type="nvarchar(max)" />
+    <Property Name="maxlatitude" Type="nvarchar(max)" />
+    <Property Name="MahalleID" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="FavoriteAdvertisements">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="UserID" Type="int" />
+    <Property Name="AdvertisementID" Type="int" />
+  </EntityType>
+  <EntityType Name="FavoriteCategories">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SubCategoryID" Type="int" />
+    <Property Name="UserID" Type="int" />
+  </EntityType>
+  <EntityType Name="FavoriteLocations">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserID" Type="int" />
+    <Property Name="CityID" Type="int" />
+    <Property Name="Districts" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Help">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Title" Type="nvarchar(max)" />
+    <Property Name="Description" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="MessageRooms">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="AdvertisementID" Type="int" />
+    <Property Name="SenderID" Type="int" />
+    <Property Name="Deleted_Sender" Type="bit" />
+    <Property Name="Deleted_Owner" Type="bit" />
+  </EntityType>
+  <EntityType Name="Messages">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SenderID" Type="int" />
+    <Property Name="RoomID" Type="int" />
+    <Property Name="Date" Type="datetime" />
+    <Property Name="Message" Type="nvarchar(max)" />
+    <Property Name="Read" Type="bit" />
+  </EntityType>
+  <EntityType Name="Notifications">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserID" Type="int" />
+    <Property Name="Type" Type="int" />
+    <Property Name="Header" Type="nvarchar" MaxLength="200" />
+    <Property Name="Text" Type="nvarchar(max)" />
+    <Property Name="Date" Type="datetime" />
+    <Property Name="Parameter1" Type="nvarchar" MaxLength="50" />
+    <Property Name="Parameter2" Type="nvarchar" MaxLength="50" />
+    <Property Name="Parameter3" Type="nvarchar" MaxLength="50" />
+    <Property Name="IsRead" Type="bit" />
+  </EntityType>
+  <EntityType Name="NotificationSettings">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserID" Type="int" />
+    <Property Name="SMS" Type="bit" />
+    <Property Name="Mail" Type="bit" />
+  </EntityType>
+  <EntityType Name="Offers">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserID" Type="int" />
+    <Property Name="AdvertisementID" Type="int" />
+    <Property Name="Price" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Description" Type="nvarchar(max)" />
+    <Property Name="Status" Type="int" />
+    <Property Name="Date" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Packages">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" />
+    <Property Name="Description" Type="nvarchar(max)" />
+    <Property Name="Price" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="OfferCount" Type="int" />
+    <Property Name="DayCount" Type="int" />
+    <Property Name="Corporate" Type="bit" />
+    <Property Name="Deleted" Type="bit" />
+  </EntityType>
+  <EntityType Name="PackageTransactions">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserID" Type="int" />
+    <Property Name="PackageID" Type="int" />
+    <Property Name="Date" Type="datetime" />
+    <Property Name="ExpiryDate" Type="datetime" />
+    <Property Name="Price" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="PaymentNumber" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="PaymentTemp">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MercantId" Type="nvarchar(max)" />
+    <Property Name="ConversationId" Type="nvarchar(max)" />
+    <Property Name="Date" Type="date" />
+  </EntityType>
+  <EntityType Name="QuestionAnswers">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="QuestionID" Type="int" />
+    <Property Name="Answer" Type="nvarchar(max)" />
+    <Property Name="Deleted" Type="bit" />
+  </EntityType>
+  <EntityType Name="Questions">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SubCategoryID" Type="int" />
+    <Property Name="Question" Type="nvarchar(max)" />
+    <Property Name="Description" Type="nvarchar(max)" />
+    <Property Name="Deleted" Type="bit" />
+  </EntityType>
+  <EntityType Name="SEO">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Page" Type="nvarchar" MaxLength="150" />
+    <Property Name="Words" Type="nvarchar(max)" />
+    <Property Name="Descriptions" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="SubCategories">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TopCategoryID" Type="int" />
+    <Property Name="Name" Type="nvarchar" MaxLength="100" />
+    <Property Name="Description" Type="nvarchar(max)" />
+    <Property Name="PhotoPath" Type="nvarchar(max)" />
+    <Property Name="Deleted" Type="bit" />
+    <Property Name="SeoKeyWords" Type="nvarchar(max)" />
+    <Property Name="SeoDescription" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="TopCategories">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="100" />
+    <Property Name="Description" Type="nvarchar(max)" />
+    <Property Name="PhotoPath" Type="nvarchar(max)" />
+    <Property Name="Deleted" Type="bit" />
+  </EntityType>
+  <EntityType Name="UserPackage">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserID" Type="int" />
+    <Property Name="PackageID" Type="int" />
+    <Property Name="ExpiryDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Users">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="200" />
+    <Property Name="Phone" Type="nvarchar" MaxLength="200" />
+    <Property Name="Mail" Type="nvarchar" MaxLength="200" />
+    <Property Name="Address" Type="nvarchar" MaxLength="400" />
+    <Property Name="City" Type="int" />
+    <Property Name="District" Type="int" />
+    <Property Name="PhotoStatus" Type="int" />
+    <Property Name="PhotoPath" Type="nvarchar(max)" />
+    <Property Name="Password" Type="nvarchar(max)" />
+    <Property Name="NotificationToken" Type="nvarchar(max)" />
+    <Property Name="Corporate" Type="bit" />
+    <Property Name="TaxName" Type="nvarchar" MaxLength="200" />
+    <Property Name="TaxOffice" Type="nvarchar" MaxLength="50" />
+    <Property Name="TaxNumber" Type="nvarchar" MaxLength="50" />
+    <Property Name="TaxAddress" Type="nvarchar" MaxLength="50" />
+    <Property Name="Otp" Type="nvarchar" MaxLength="50" />
+    <Property Name="PhoneVerified" Type="bit" />
+    <Property Name="Deleted" Type="bit" />
+    <Property Name="CreateDate" Type="datetime" />
+    <Property Name="UpdateDate" Type="datetime" />
+    <Property Name="DeleteDate" Type="datetime" />
+    <Property Name="Subscription" Type="bit" />
+    <Property Name="MailVerified" Type="bit" />
+  </EntityType>
+  <EntityType Name="UserTable">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="200" />
+    <Property Name="Phone" Type="nvarchar" MaxLength="200" />
+    <Property Name="Mail" Type="nvarchar" MaxLength="200" />
+    <Property Name="Address" Type="nvarchar(max)" />
+    <Property Name="City" Type="int" />
+    <Property Name="District" Type="int" />
+    <Property Name="PhotoStatus" Type="int" />
+    <Property Name="PhotoPath" Type="nvarchar(max)" />
+    <Property Name="Password" Type="nvarchar(max)" />
+    <Property Name="NotificationToken" Type="nvarchar(max)" />
+    <Property Name="Corporate" Type="bit" />
+    <Property Name="TaxName" Type="nvarchar" MaxLength="200" />
+    <Property Name="TaxOffice" Type="nvarchar" MaxLength="200" />
+    <Property Name="TaxNumber" Type="nvarchar" MaxLength="50" />
+    <Property Name="TaxAddress" Type="nvarchar(max)" />
+    <Property Name="Otp" Type="nvarchar" MaxLength="50" />
+    <Property Name="PhoneVerified" Type="bit" />
+    <Property Name="Deleted" Type="bit" />
+    <Property Name="CreateDate" Type="datetime" />
+    <Property Name="UpdateDate" Type="datetime" />
+    <Property Name="DeleteDate" Type="datetime" />
+    <Property Name="Subscription" Type="bit" />
+    <Property Name="MailVerified" Type="bit" />
+    <Property Name="Banned" Type="bit" />
+  </EntityType>
+  <EntityType Name="UserTableTemp">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="200" />
+    <Property Name="Phone" Type="nvarchar" MaxLength="200" />
+    <Property Name="Mail" Type="nvarchar" MaxLength="200" />
+    <Property Name="Address" Type="nvarchar" MaxLength="400" />
+    <Property Name="City" Type="int" />
+    <Property Name="District" Type="int" />
+    <Property Name="PhotoStatus" Type="int" />
+    <Property Name="PhotoPath" Type="nvarchar(max)" />
+    <Property Name="Password" Type="nvarchar(max)" />
+    <Property Name="NotificationToken" Type="nvarchar(max)" />
+    <Property Name="Corporate" Type="bit" />
+    <Property Name="TaxName" Type="nvarchar" MaxLength="200" />
+    <Property Name="TaxOffice" Type="nvarchar" MaxLength="50" />
+    <Property Name="TaxNumber" Type="nvarchar" MaxLength="50" />
+    <Property Name="TaxAddress" Type="nvarchar" MaxLength="50" />
+    <Property Name="Otp" Type="nvarchar" MaxLength="50" />
+    <Property Name="PhoneVerified" Type="bit" />
+    <Property Name="Deleted" Type="bit" />
+    <Property Name="CreateDate" Type="datetime" />
+    <Property Name="UpdateDate" Type="datetime" />
+    <Property Name="DeleteDate" Type="datetime" />
+    <Property Name="Subscription" Type="bit" />
+    <Property Name="MailVerified" Type="bit" />
+  </EntityType>
+  <EntityContainer Name="HerIsCepteModelStoreContainer">
+    <EntitySet Name="Admins" EntityType="Self.Admins" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AdvertisementDocuments" EntityType="Self.AdvertisementDocuments" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AdvertisementQuestion" EntityType="Self.AdvertisementQuestion" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Advertisements" EntityType="Self.Advertisements" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Blog" EntityType="Self.Blog" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="BlogPhoto" EntityType="Self.BlogPhoto" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Comments" EntityType="Self.Comments" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CorporateApplications" EntityType="Self.CorporateApplications" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CorporateDocuments" EntityType="Self.CorporateDocuments" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Definitions" EntityType="Self.Definitions" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DistrictsAndCities" EntityType="Self.DistrictsAndCities" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="FavoriteAdvertisements" EntityType="Self.FavoriteAdvertisements" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="FavoriteCategories" EntityType="Self.FavoriteCategories" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="FavoriteLocations" EntityType="Self.FavoriteLocations" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Help" EntityType="Self.Help" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MessageRooms" EntityType="Self.MessageRooms" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Messages" EntityType="Self.Messages" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Notifications" EntityType="Self.Notifications" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="NotificationSettings" EntityType="Self.NotificationSettings" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Offers" EntityType="Self.Offers" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Packages" EntityType="Self.Packages" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PackageTransactions" EntityType="Self.PackageTransactions" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PaymentTemp" EntityType="Self.PaymentTemp" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="QuestionAnswers" EntityType="Self.QuestionAnswers" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Questions" EntityType="Self.Questions" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SEO" EntityType="Self.SEO" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SubCategories" EntityType="Self.SubCategories" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TopCategories" EntityType="Self.TopCategories" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UserPackage" EntityType="Self.UserPackage" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UserTable" EntityType="Self.UserTable" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UserTableTemp" EntityType="Self.UserTableTemp" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

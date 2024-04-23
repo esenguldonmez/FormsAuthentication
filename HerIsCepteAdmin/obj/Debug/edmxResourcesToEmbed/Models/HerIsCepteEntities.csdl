@@ -1,0 +1,435 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="HerIsCepteModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Admins">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Department" Type="Int32" />
+    <Property Name="Name" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Mail" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Phone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Gender" Type="Int32" />
+    <Property Name="Username" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Password" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Deleted" Type="Boolean" />
+    <Property Name="LoginPermission" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="AdvertisementDocuments">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="AdvertisementID" Type="Int32" />
+    <Property Name="Status" Type="Int32" />
+    <Property Name="DocumentPath" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="AdvertisementQuestion">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="AdvertisementID" Type="Int32" />
+    <Property Name="QuestionID" Type="Int32" />
+    <Property Name="AnswerID" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Advertisements">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserID" Type="Int32" />
+    <Property Name="TopCategoriesID" Type="Int32" />
+    <Property Name="SubCategoriesID" Type="Int32" />
+    <Property Name="AdminVerified" Type="Boolean" />
+    <Property Name="Status" Type="Int32" />
+    <Property Name="CreateDate" Type="DateTime" Precision="3" />
+    <Property Name="VerifyDate" Type="DateTime" Precision="3" />
+    <Property Name="ExpiryDate" Type="DateTime" Precision="3" />
+    <Property Name="City" Type="Int32" />
+    <Property Name="District" Type="Int32" />
+    <Property Name="Address" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Preprice" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="RejectReason" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Blog">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Title" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="SubTitle" Type="String" MaxLength="350" FixedLength="false" Unicode="true" />
+    <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="SeoWords" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="SeoDescription" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="BlogPhoto">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="BlogID" Type="Int32" />
+    <Property Name="Photo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Comments">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserID" Type="Int32" />
+    <Property Name="CommentedBy" Type="Int32" />
+    <Property Name="AdvertisementID" Type="Int32" />
+    <Property Name="OfferID" Type="Int32" />
+    <Property Name="Comment" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Point" Type="Int32" />
+    <Property Name="Status" Type="Int32" />
+    <Property Name="CreateDate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="CorporateApplications">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserID" Type="Int32" />
+    <Property Name="Tarih" Type="DateTime" Precision="3" />
+    <Property Name="Completed" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="CorporateDocuments">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ApplicationID" Type="Int32" />
+    <Property Name="DocumentPath" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Definitions">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Value" Type="Int32" />
+    <Property Name="Description" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Parameter" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Deleted" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="DistrictsAndCities">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SehirIlceMahalleAdi" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="UstID" Type="Int32" />
+    <Property Name="minlongitude" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="minlatitude" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="maxlongitude" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="maxlatitude" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="MahalleID" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="FavoriteAdvertisements">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="UserID" Type="Int32" />
+    <Property Name="AdvertisementID" Type="Int32" />
+  </EntityType>
+  <EntityType Name="FavoriteCategories">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SubCategoryID" Type="Int32" />
+    <Property Name="UserID" Type="Int32" />
+  </EntityType>
+  <EntityType Name="FavoriteLocations">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserID" Type="Int32" />
+    <Property Name="CityID" Type="Int32" />
+    <Property Name="Districts" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Help">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Title" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="MessageRooms">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="AdvertisementID" Type="Int32" />
+    <Property Name="SenderID" Type="Int32" />
+    <Property Name="Deleted_Sender" Type="Boolean" />
+    <Property Name="Deleted_Owner" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="Messages">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SenderID" Type="Int32" />
+    <Property Name="RoomID" Type="Int32" />
+    <Property Name="Date" Type="DateTime" Precision="3" />
+    <Property Name="Message" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Read" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="Notifications">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserID" Type="Int32" />
+    <Property Name="Type" Type="Int32" />
+    <Property Name="Header" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Text" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Date" Type="DateTime" Precision="3" />
+    <Property Name="Parameter1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Parameter2" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Parameter3" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="IsRead" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="NotificationSettings">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserID" Type="Int32" />
+    <Property Name="SMS" Type="Boolean" />
+    <Property Name="Mail" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="Offers">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserID" Type="Int32" />
+    <Property Name="AdvertisementID" Type="Int32" />
+    <Property Name="Price" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Status" Type="Int32" />
+    <Property Name="Date" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="Packages">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Price" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="OfferCount" Type="Int32" />
+    <Property Name="DayCount" Type="Int32" />
+    <Property Name="Corporate" Type="Boolean" />
+    <Property Name="Deleted" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="PackageTransactions">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserID" Type="Int32" />
+    <Property Name="PackageID" Type="Int32" />
+    <Property Name="Date" Type="DateTime" Precision="3" />
+    <Property Name="ExpiryDate" Type="DateTime" Precision="3" />
+    <Property Name="Price" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="PaymentNumber" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="PaymentTemp">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="MercantId" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ConversationId" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Date" Type="DateTime" Precision="0" />
+  </EntityType>
+  <EntityType Name="QuestionAnswers">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="QuestionID" Type="Int32" />
+    <Property Name="Answer" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Deleted" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="Questions">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SubCategoryID" Type="Int32" />
+    <Property Name="Question" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Deleted" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="SEO">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Page" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="Words" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Descriptions" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="SubCategories">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TopCategoryID" Type="Int32" />
+    <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="PhotoPath" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Deleted" Type="Boolean" />
+    <Property Name="SeoKeyWords" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="SeoDescription" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="TopCategories">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="PhotoPath" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Deleted" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="UserPackage">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserID" Type="Int32" />
+    <Property Name="PackageID" Type="Int32" />
+    <Property Name="ExpiryDate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="Users">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Phone" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Mail" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Address" Type="String" MaxLength="400" FixedLength="false" Unicode="true" />
+    <Property Name="City" Type="Int32" />
+    <Property Name="District" Type="Int32" />
+    <Property Name="PhotoStatus" Type="Int32" />
+    <Property Name="PhotoPath" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Password" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="NotificationToken" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Corporate" Type="Boolean" />
+    <Property Name="TaxName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="TaxOffice" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="TaxNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="TaxAddress" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Otp" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PhoneVerified" Type="Boolean" />
+    <Property Name="Deleted" Type="Boolean" />
+    <Property Name="CreateDate" Type="DateTime" Precision="3" />
+    <Property Name="UpdateDate" Type="DateTime" Precision="3" />
+    <Property Name="DeleteDate" Type="DateTime" Precision="3" />
+    <Property Name="Subscription" Type="Boolean" />
+    <Property Name="MailVerified" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="UserTable">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Phone" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Mail" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Address" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="City" Type="Int32" />
+    <Property Name="District" Type="Int32" />
+    <Property Name="PhotoStatus" Type="Int32" />
+    <Property Name="PhotoPath" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Password" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="NotificationToken" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Corporate" Type="Boolean" />
+    <Property Name="TaxName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="TaxOffice" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="TaxNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="TaxAddress" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Otp" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PhoneVerified" Type="Boolean" />
+    <Property Name="Deleted" Type="Boolean" />
+    <Property Name="CreateDate" Type="DateTime" Precision="3" />
+    <Property Name="UpdateDate" Type="DateTime" Precision="3" />
+    <Property Name="DeleteDate" Type="DateTime" Precision="3" />
+    <Property Name="Subscription" Type="Boolean" />
+    <Property Name="MailVerified" Type="Boolean" />
+    <Property Name="Banned" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="UserTableTemp">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Phone" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Mail" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Address" Type="String" MaxLength="400" FixedLength="false" Unicode="true" />
+    <Property Name="City" Type="Int32" />
+    <Property Name="District" Type="Int32" />
+    <Property Name="PhotoStatus" Type="Int32" />
+    <Property Name="PhotoPath" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Password" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="NotificationToken" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Corporate" Type="Boolean" />
+    <Property Name="TaxName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="TaxOffice" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="TaxNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="TaxAddress" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Otp" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PhoneVerified" Type="Boolean" />
+    <Property Name="Deleted" Type="Boolean" />
+    <Property Name="CreateDate" Type="DateTime" Precision="3" />
+    <Property Name="UpdateDate" Type="DateTime" Precision="3" />
+    <Property Name="DeleteDate" Type="DateTime" Precision="3" />
+    <Property Name="Subscription" Type="Boolean" />
+    <Property Name="MailVerified" Type="Boolean" />
+  </EntityType>
+  <EntityContainer Name="HerIsCepteEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Admins" EntityType="Self.Admins" />
+    <EntitySet Name="AdvertisementDocuments" EntityType="Self.AdvertisementDocuments" />
+    <EntitySet Name="AdvertisementQuestion" EntityType="Self.AdvertisementQuestion" />
+    <EntitySet Name="Advertisements" EntityType="Self.Advertisements" />
+    <EntitySet Name="Blog" EntityType="Self.Blog" />
+    <EntitySet Name="BlogPhoto" EntityType="Self.BlogPhoto" />
+    <EntitySet Name="Comments" EntityType="Self.Comments" />
+    <EntitySet Name="CorporateApplications" EntityType="Self.CorporateApplications" />
+    <EntitySet Name="CorporateDocuments" EntityType="Self.CorporateDocuments" />
+    <EntitySet Name="Definitions" EntityType="Self.Definitions" />
+    <EntitySet Name="DistrictsAndCities" EntityType="Self.DistrictsAndCities" />
+    <EntitySet Name="FavoriteAdvertisements" EntityType="Self.FavoriteAdvertisements" />
+    <EntitySet Name="FavoriteCategories" EntityType="Self.FavoriteCategories" />
+    <EntitySet Name="FavoriteLocations" EntityType="Self.FavoriteLocations" />
+    <EntitySet Name="Help" EntityType="Self.Help" />
+    <EntitySet Name="MessageRooms" EntityType="Self.MessageRooms" />
+    <EntitySet Name="Messages" EntityType="Self.Messages" />
+    <EntitySet Name="Notifications" EntityType="Self.Notifications" />
+    <EntitySet Name="NotificationSettings" EntityType="Self.NotificationSettings" />
+    <EntitySet Name="Offers" EntityType="Self.Offers" />
+    <EntitySet Name="Packages" EntityType="Self.Packages" />
+    <EntitySet Name="PackageTransactions" EntityType="Self.PackageTransactions" />
+    <EntitySet Name="PaymentTemp" EntityType="Self.PaymentTemp" />
+    <EntitySet Name="QuestionAnswers" EntityType="Self.QuestionAnswers" />
+    <EntitySet Name="Questions" EntityType="Self.Questions" />
+    <EntitySet Name="SEO" EntityType="Self.SEO" />
+    <EntitySet Name="SubCategories" EntityType="Self.SubCategories" />
+    <EntitySet Name="TopCategories" EntityType="Self.TopCategories" />
+    <EntitySet Name="UserPackage" EntityType="Self.UserPackage" />
+    <EntitySet Name="Users" EntityType="Self.Users" />
+    <EntitySet Name="UserTable" EntityType="Self.UserTable" />
+    <EntitySet Name="UserTableTemp" EntityType="Self.UserTableTemp" />
+  </EntityContainer>
+</Schema>

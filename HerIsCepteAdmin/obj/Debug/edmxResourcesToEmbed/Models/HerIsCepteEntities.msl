@@ -1,0 +1,435 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="HerIsCepteModelStoreContainer" CdmEntityContainer="HerIsCepteEntities">
+    <EntitySetMapping Name="Admins">
+      <EntityTypeMapping TypeName="HerIsCepteModel.Admins">
+        <MappingFragment StoreEntitySet="Admins">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Department" ColumnName="Department" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Mail" ColumnName="Mail" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="Username" ColumnName="Username" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+          <ScalarProperty Name="LoginPermission" ColumnName="LoginPermission" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AdvertisementDocuments">
+      <EntityTypeMapping TypeName="HerIsCepteModel.AdvertisementDocuments">
+        <MappingFragment StoreEntitySet="AdvertisementDocuments">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="AdvertisementID" ColumnName="AdvertisementID" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="DocumentPath" ColumnName="DocumentPath" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AdvertisementQuestion">
+      <EntityTypeMapping TypeName="HerIsCepteModel.AdvertisementQuestion">
+        <MappingFragment StoreEntitySet="AdvertisementQuestion">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="AdvertisementID" ColumnName="AdvertisementID" />
+          <ScalarProperty Name="QuestionID" ColumnName="QuestionID" />
+          <ScalarProperty Name="AnswerID" ColumnName="AnswerID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Advertisements">
+      <EntityTypeMapping TypeName="HerIsCepteModel.Advertisements">
+        <MappingFragment StoreEntitySet="Advertisements">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="TopCategoriesID" ColumnName="TopCategoriesID" />
+          <ScalarProperty Name="SubCategoriesID" ColumnName="SubCategoriesID" />
+          <ScalarProperty Name="AdminVerified" ColumnName="AdminVerified" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="VerifyDate" ColumnName="VerifyDate" />
+          <ScalarProperty Name="ExpiryDate" ColumnName="ExpiryDate" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="District" ColumnName="District" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Preprice" ColumnName="Preprice" />
+          <ScalarProperty Name="RejectReason" ColumnName="RejectReason" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Blog">
+      <EntityTypeMapping TypeName="HerIsCepteModel.Blog">
+        <MappingFragment StoreEntitySet="Blog">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="SubTitle" ColumnName="SubTitle" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="SeoWords" ColumnName="SeoWords" />
+          <ScalarProperty Name="SeoDescription" ColumnName="SeoDescription" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BlogPhoto">
+      <EntityTypeMapping TypeName="HerIsCepteModel.BlogPhoto">
+        <MappingFragment StoreEntitySet="BlogPhoto">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="BlogID" ColumnName="BlogID" />
+          <ScalarProperty Name="Photo" ColumnName="Photo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Comments">
+      <EntityTypeMapping TypeName="HerIsCepteModel.Comments">
+        <MappingFragment StoreEntitySet="Comments">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="CommentedBy" ColumnName="CommentedBy" />
+          <ScalarProperty Name="AdvertisementID" ColumnName="AdvertisementID" />
+          <ScalarProperty Name="OfferID" ColumnName="OfferID" />
+          <ScalarProperty Name="Comment" ColumnName="Comment" />
+          <ScalarProperty Name="Point" ColumnName="Point" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CorporateApplications">
+      <EntityTypeMapping TypeName="HerIsCepteModel.CorporateApplications">
+        <MappingFragment StoreEntitySet="CorporateApplications">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="Tarih" ColumnName="Tarih" />
+          <ScalarProperty Name="Completed" ColumnName="Completed" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CorporateDocuments">
+      <EntityTypeMapping TypeName="HerIsCepteModel.CorporateDocuments">
+        <MappingFragment StoreEntitySet="CorporateDocuments">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="ApplicationID" ColumnName="ApplicationID" />
+          <ScalarProperty Name="DocumentPath" ColumnName="DocumentPath" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Definitions">
+      <EntityTypeMapping TypeName="HerIsCepteModel.Definitions">
+        <MappingFragment StoreEntitySet="Definitions">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Value" ColumnName="Value" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Parameter" ColumnName="Parameter" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DistrictsAndCities">
+      <EntityTypeMapping TypeName="HerIsCepteModel.DistrictsAndCities">
+        <MappingFragment StoreEntitySet="DistrictsAndCities">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="SehirIlceMahalleAdi" ColumnName="SehirIlceMahalleAdi" />
+          <ScalarProperty Name="UstID" ColumnName="UstID" />
+          <ScalarProperty Name="minlongitude" ColumnName="minlongitude" />
+          <ScalarProperty Name="minlatitude" ColumnName="minlatitude" />
+          <ScalarProperty Name="maxlongitude" ColumnName="maxlongitude" />
+          <ScalarProperty Name="maxlatitude" ColumnName="maxlatitude" />
+          <ScalarProperty Name="MahalleID" ColumnName="MahalleID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FavoriteAdvertisements">
+      <EntityTypeMapping TypeName="HerIsCepteModel.FavoriteAdvertisements">
+        <MappingFragment StoreEntitySet="FavoriteAdvertisements">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="AdvertisementID" ColumnName="AdvertisementID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FavoriteCategories">
+      <EntityTypeMapping TypeName="HerIsCepteModel.FavoriteCategories">
+        <MappingFragment StoreEntitySet="FavoriteCategories">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="SubCategoryID" ColumnName="SubCategoryID" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FavoriteLocations">
+      <EntityTypeMapping TypeName="HerIsCepteModel.FavoriteLocations">
+        <MappingFragment StoreEntitySet="FavoriteLocations">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="CityID" ColumnName="CityID" />
+          <ScalarProperty Name="Districts" ColumnName="Districts" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Help">
+      <EntityTypeMapping TypeName="HerIsCepteModel.Help">
+        <MappingFragment StoreEntitySet="Help">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MessageRooms">
+      <EntityTypeMapping TypeName="HerIsCepteModel.MessageRooms">
+        <MappingFragment StoreEntitySet="MessageRooms">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="AdvertisementID" ColumnName="AdvertisementID" />
+          <ScalarProperty Name="SenderID" ColumnName="SenderID" />
+          <ScalarProperty Name="Deleted_Sender" ColumnName="Deleted_Sender" />
+          <ScalarProperty Name="Deleted_Owner" ColumnName="Deleted_Owner" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Messages">
+      <EntityTypeMapping TypeName="HerIsCepteModel.Messages">
+        <MappingFragment StoreEntitySet="Messages">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="SenderID" ColumnName="SenderID" />
+          <ScalarProperty Name="RoomID" ColumnName="RoomID" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="Message" ColumnName="Message" />
+          <ScalarProperty Name="Read" ColumnName="Read" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Notifications">
+      <EntityTypeMapping TypeName="HerIsCepteModel.Notifications">
+        <MappingFragment StoreEntitySet="Notifications">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="Header" ColumnName="Header" />
+          <ScalarProperty Name="Text" ColumnName="Text" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="Parameter1" ColumnName="Parameter1" />
+          <ScalarProperty Name="Parameter2" ColumnName="Parameter2" />
+          <ScalarProperty Name="Parameter3" ColumnName="Parameter3" />
+          <ScalarProperty Name="IsRead" ColumnName="IsRead" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NotificationSettings">
+      <EntityTypeMapping TypeName="HerIsCepteModel.NotificationSettings">
+        <MappingFragment StoreEntitySet="NotificationSettings">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="SMS" ColumnName="SMS" />
+          <ScalarProperty Name="Mail" ColumnName="Mail" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Offers">
+      <EntityTypeMapping TypeName="HerIsCepteModel.Offers">
+        <MappingFragment StoreEntitySet="Offers">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="AdvertisementID" ColumnName="AdvertisementID" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Packages">
+      <EntityTypeMapping TypeName="HerIsCepteModel.Packages">
+        <MappingFragment StoreEntitySet="Packages">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="OfferCount" ColumnName="OfferCount" />
+          <ScalarProperty Name="DayCount" ColumnName="DayCount" />
+          <ScalarProperty Name="Corporate" ColumnName="Corporate" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PackageTransactions">
+      <EntityTypeMapping TypeName="HerIsCepteModel.PackageTransactions">
+        <MappingFragment StoreEntitySet="PackageTransactions">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="PackageID" ColumnName="PackageID" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="ExpiryDate" ColumnName="ExpiryDate" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="PaymentNumber" ColumnName="PaymentNumber" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PaymentTemp">
+      <EntityTypeMapping TypeName="HerIsCepteModel.PaymentTemp">
+        <MappingFragment StoreEntitySet="PaymentTemp">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="MercantId" ColumnName="MercantId" />
+          <ScalarProperty Name="ConversationId" ColumnName="ConversationId" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="QuestionAnswers">
+      <EntityTypeMapping TypeName="HerIsCepteModel.QuestionAnswers">
+        <MappingFragment StoreEntitySet="QuestionAnswers">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="QuestionID" ColumnName="QuestionID" />
+          <ScalarProperty Name="Answer" ColumnName="Answer" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Questions">
+      <EntityTypeMapping TypeName="HerIsCepteModel.Questions">
+        <MappingFragment StoreEntitySet="Questions">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="SubCategoryID" ColumnName="SubCategoryID" />
+          <ScalarProperty Name="Question" ColumnName="Question" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SEO">
+      <EntityTypeMapping TypeName="HerIsCepteModel.SEO">
+        <MappingFragment StoreEntitySet="SEO">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Page" ColumnName="Page" />
+          <ScalarProperty Name="Words" ColumnName="Words" />
+          <ScalarProperty Name="Descriptions" ColumnName="Descriptions" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SubCategories">
+      <EntityTypeMapping TypeName="HerIsCepteModel.SubCategories">
+        <MappingFragment StoreEntitySet="SubCategories">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="TopCategoryID" ColumnName="TopCategoryID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="PhotoPath" ColumnName="PhotoPath" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+          <ScalarProperty Name="SeoKeyWords" ColumnName="SeoKeyWords" />
+          <ScalarProperty Name="SeoDescription" ColumnName="SeoDescription" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TopCategories">
+      <EntityTypeMapping TypeName="HerIsCepteModel.TopCategories">
+        <MappingFragment StoreEntitySet="TopCategories">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="PhotoPath" ColumnName="PhotoPath" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserPackage">
+      <EntityTypeMapping TypeName="HerIsCepteModel.UserPackage">
+        <MappingFragment StoreEntitySet="UserPackage">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="PackageID" ColumnName="PackageID" />
+          <ScalarProperty Name="ExpiryDate" ColumnName="ExpiryDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="HerIsCepteModel.Users">
+        <MappingFragment StoreEntitySet="Users">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="Mail" ColumnName="Mail" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="District" ColumnName="District" />
+          <ScalarProperty Name="PhotoStatus" ColumnName="PhotoStatus" />
+          <ScalarProperty Name="PhotoPath" ColumnName="PhotoPath" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="NotificationToken" ColumnName="NotificationToken" />
+          <ScalarProperty Name="Corporate" ColumnName="Corporate" />
+          <ScalarProperty Name="TaxName" ColumnName="TaxName" />
+          <ScalarProperty Name="TaxOffice" ColumnName="TaxOffice" />
+          <ScalarProperty Name="TaxNumber" ColumnName="TaxNumber" />
+          <ScalarProperty Name="TaxAddress" ColumnName="TaxAddress" />
+          <ScalarProperty Name="Otp" ColumnName="Otp" />
+          <ScalarProperty Name="PhoneVerified" ColumnName="PhoneVerified" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+          <ScalarProperty Name="DeleteDate" ColumnName="DeleteDate" />
+          <ScalarProperty Name="Subscription" ColumnName="Subscription" />
+          <ScalarProperty Name="MailVerified" ColumnName="MailVerified" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserTable">
+      <EntityTypeMapping TypeName="HerIsCepteModel.UserTable">
+        <MappingFragment StoreEntitySet="UserTable">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="Mail" ColumnName="Mail" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="District" ColumnName="District" />
+          <ScalarProperty Name="PhotoStatus" ColumnName="PhotoStatus" />
+          <ScalarProperty Name="PhotoPath" ColumnName="PhotoPath" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="NotificationToken" ColumnName="NotificationToken" />
+          <ScalarProperty Name="Corporate" ColumnName="Corporate" />
+          <ScalarProperty Name="TaxName" ColumnName="TaxName" />
+          <ScalarProperty Name="TaxOffice" ColumnName="TaxOffice" />
+          <ScalarProperty Name="TaxNumber" ColumnName="TaxNumber" />
+          <ScalarProperty Name="TaxAddress" ColumnName="TaxAddress" />
+          <ScalarProperty Name="Otp" ColumnName="Otp" />
+          <ScalarProperty Name="PhoneVerified" ColumnName="PhoneVerified" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+          <ScalarProperty Name="DeleteDate" ColumnName="DeleteDate" />
+          <ScalarProperty Name="Subscription" ColumnName="Subscription" />
+          <ScalarProperty Name="MailVerified" ColumnName="MailVerified" />
+          <ScalarProperty Name="Banned" ColumnName="Banned" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserTableTemp">
+      <EntityTypeMapping TypeName="HerIsCepteModel.UserTableTemp">
+        <MappingFragment StoreEntitySet="UserTableTemp">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="Mail" ColumnName="Mail" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="District" ColumnName="District" />
+          <ScalarProperty Name="PhotoStatus" ColumnName="PhotoStatus" />
+          <ScalarProperty Name="PhotoPath" ColumnName="PhotoPath" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="NotificationToken" ColumnName="NotificationToken" />
+          <ScalarProperty Name="Corporate" ColumnName="Corporate" />
+          <ScalarProperty Name="TaxName" ColumnName="TaxName" />
+          <ScalarProperty Name="TaxOffice" ColumnName="TaxOffice" />
+          <ScalarProperty Name="TaxNumber" ColumnName="TaxNumber" />
+          <ScalarProperty Name="TaxAddress" ColumnName="TaxAddress" />
+          <ScalarProperty Name="Otp" ColumnName="Otp" />
+          <ScalarProperty Name="PhoneVerified" ColumnName="PhoneVerified" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+          <ScalarProperty Name="DeleteDate" ColumnName="DeleteDate" />
+          <ScalarProperty Name="Subscription" ColumnName="Subscription" />
+          <ScalarProperty Name="MailVerified" ColumnName="MailVerified" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
